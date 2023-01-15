@@ -1,3 +1,52 @@
 <resources>
-    <string name="app_name">PetNet</string>
+    <string name="app_name" translatable="false">
+        Pet_Net
+    </string>
+
+    <string name="password_requirement_characters" translatable="false">
+        At least 8 characters
+    </string>
+
+    <string name="password_requirement_capital" translatable="false">
+        At least 1 upper-case letter
+    </string>
+
+
+    <string name="password_requirement_digit" translatable="false">
+        At least 1 digit
+    </string>
+
+    <string name="label_sign_in_to_account">
+	Войти в аккаунт
+    </string>
+
+    <string name="label_sign_up_for_account">
+        Еще нет аккаунта? Зарегистрироваться
+    </string>
+
+    <string name="label_password">Password</string>
+
+    <string name="label_email">Email Address</string>
+    <string name="label_login">Login</string>
+    <string name="label_search">Search</string>
+    <string name="label_title">Title</string>
+    <string name="label_text">Text</string>
+    <string name="action_need_account">
+	Need an account?
+</string>
+    <string name="action_already_have_account">
+	Already have an account?
+</string>
+    <string name="error_title">Whoops</string>
+    <string name="error_action">OK</string>
+    <string name="action_sign_up">Sign Up</string>
+    <string name="action_sign_in">Sign In</string>
+    <string name="cd_show_password">Show Password</string>
+    <string name="cd_hide_password">Hide Password</string>
+    <string name="password_requirement_satisfied">
+	%s, satisfied
+</string>
+    <string name="password_requirement_not_satisfied">
+	%s, needed
+</string>
 </resources>

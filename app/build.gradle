@@ -1,17 +1,17 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'com.google.relay' version '0.3.00'
+    id 'kotlin-kapt'
+    id 'kotlin-android-extensions'
 }
 
 android {
-    namespace 'com.example.petnet'
-    compileSdk 32
+    compileSdk 31
 
     defaultConfig {
         applicationId "com.example.petnet"
         minSdk 21
-        targetSdk 32
+        targetSdk 31
         versionCode 1
         versionName "1.0"
 
@@ -38,27 +38,76 @@ android {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion '1.1.1'
+        kotlinCompilerExtensionVersion '1.1.0-rc03'
     }
     packagingOptions {
         resources {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
         }
     }
+    namespace 'com.example.petnet'
 }
 
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
-    implementation 'androidx.activity:activity-compose:1.3.1'
-    implementation "androidx.compose.ui:ui:$compose_ui_version"
-    implementation "androidx.compose.ui:ui-tooling-preview:$compose_ui_version"
-    implementation 'androidx.compose.material:material:1.1.1'
+    implementation "androidx.compose.ui:ui:$compose_version"
+    implementation "androidx.compose.material:material:$compose_version"
+    implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.1'
+    implementation 'androidx.activity:activity-compose:1.4.0'
+    implementation 'com.google.android.datatransport:transport-runtime:3.1.4'
+    implementation 'androidx.datastore:datastore-core:1.0.0'
+    implementation 'androidx.datastore:datastore-preferences-core:1.0.0'
+    implementation 'androidx.room:room-ktx:2.4.2'
+    kapt "androidx.room:room-compiler:2.4.2"
+    implementation "androidx.room:room-runtime:2.4.2"
+    implementation 'com.google.android.material:material:1.6.0'
+    implementation 'androidx.paging:paging-common-ktx:3.1.1'
+    implementation 'com.google.android.gms:play-services-cast-framework:21.0.1'
+    implementation 'com.google.firebase:firebase-database-ktx:20.0.5'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"
-    debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version"
-    debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
+    debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
+    implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:2.4.1"
+    implementation 'androidx.activity:activity-compose:1.4.0'
+    implementation "androidx.compose.foundation:foundation:$compose_version"
+    implementation "androidx.compose.ui:ui:$compose_version"
+    implementation "androidx.compose.material:material-icons-extended:$compose_version"
+    debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    implementation "com.google.code.gson:gson:$gson"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.9.3"
+    implementation 'io.ktor:ktor-client-gson:1.6.3'
+    //Ktor Engine
+    implementation "io.ktor:ktor-client-cio:2.0.0"
+    //Ktor log response
+    implementation "io.ktor:ktor-client-logging:2.0.0"
+    implementation "ch.qos.logback:logback-classic:1.2.11"
+    implementation 'org.ocpsoft.prettytime:prettytime:4.0.1.Final'
+    implementation "io.insert-koin:koin-android:3.1.6"
+    implementation "io.insert-koin:koin-androidx-compose:3.1.5"
+    implementation 'androidx.preference:preference-ktx:1.2.0'
+    implementation "io.ktor:ktor-serialization-kotlinx-json:2.0.0"
+    implementation "io.ktor:ktor-client-content-negotiation:2.0.0"
+    implementation "androidx.navigation:navigation-compose:2.5.0-rc01"
+    implementation "androidx.cardview:cardview:1.0.0"
+    implementation "androidx.paging:paging-runtime:3.1.1"
+    implementation("androidx.paging:paging-compose:1.0.0-alpha14")
+    implementation "com.google.accompanist:accompanist-swiperefresh:0.19.0"
+    implementation "androidx.compose.runtime:runtime-livedata:$compose_version"
+    implementation("dev.olshevski.navigation:reimagined:1.1.0")
+    //implementation "com.google.accompanist:accompanist-flowlayout:$compose_version"
+    // Облегченная библиотека, содержит только карту, слой пробок,
+    // LocationManager, UserLocationLayer и возможность скачивать офлайн-карты (только в платной версии).
+    implementation 'com.yandex.android:maps.mobile:4.2.2-lite'
+
+    // Полная библиотека в дополнение к lite версии предоставляет автомобильную маршрутизацию,
+    // веломаршрутизацию, пешеходную маршрутизацию и маршрутизацию на общественном транспорте,
+    // поиск, suggest, геокодирование и отображение панорам.
+    // implementation 'com.yandex.android:maps.mobile:4.2.2-full'
 }
